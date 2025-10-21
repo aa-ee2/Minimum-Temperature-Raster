@@ -56,7 +56,11 @@ with tabs[0]:
     else:
         cols = [c for c in ["DEPARTAMEN","DEPARTAMENTO","PROVINCIA","DISTRITO","TMIN_MEAN"] if c in targets_andes.columns]
         ta = targets_andes[cols].copy()
-        st.dataframe(ta, use_container_width=True, height=350)
+        st.dataframe(
+            ta.style.format({"TMIN_MEAN": "{:.2f}"}),
+            use_container_width=True,
+            height=400
+)
         bio = io.BytesIO(); ta.to_csv(bio, index=False, encoding="utf-8-sig")
         st.download_button("⬇️ Descargar targets Andes (CSV)", bio.getvalue(), file_name="targets_andes.csv", mime="text/csv")
 

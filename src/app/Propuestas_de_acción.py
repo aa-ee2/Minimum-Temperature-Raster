@@ -94,3 +94,5 @@ if costos_por_distrito is not None:
     st.download_button("⬇️ Descargar costos por distrito (CSV)", bio3.getvalue(), file_name="costos_por_distrito.csv", mime="text/csv")
 
 st.caption("Nota: Documenta si usaste p10 global o por grupo (Andes/Amazonía) en el README.")
+
+#ho
